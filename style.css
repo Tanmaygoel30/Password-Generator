@@ -1,0 +1,110 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(63, 63, 65);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+
+.container {
+    border: 2px solid gray;
+    padding: 0.5em;
+    position: relative;
+}
+
+.display {
+    border: 2px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    margin-bottom: 0.3em;
+}
+
+.output {
+    margin: 0.2em;
+}
+
+.copyMsg {
+    position: absolute;
+    bottom: 94%;
+    right: 0;
+    z-index: 2;
+    border-radius: 5px;
+    animation: popUp 0.005s ease-in 0s 1 normal;
+    color: white;
+    padding: 0.1em 0.2em;
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.giveInput {
+    margin-top: 0.3em;
+    padding: 0.3em;
+}
+
+.length {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.lengthNo {
+    margin: auto 0px;
+}
+
+.slidebar {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+}
+
+.strength {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3em;
+    margin-top: 0.5em;
+}
+
+.indicator {
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin: auto 0px;
+}
+
+.generate {
+    font-weight: 700;
+    padding: 0.7em;
+    border-radius: 5px;
+    display: block;
+    margin: 1em auto;
+}

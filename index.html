@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Password Generator</h1>
+
+      <div class="container">
+        <div class="display">
+          <div class="output"><input readonly /></div>
+          <div>
+            <span class="copyMsg"></span>
+            <button onclick="copyContent()"k>
+              <i class="fa-regular fa-clone"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="giveInput">
+          <div class="length">
+            <h3>Password Length</h3>
+            <span class="lengthNo">1</span>
+          </div>
+
+          <div class="slidebar">
+            <input
+              type="range"
+              min="1"
+              max="16"
+              step="1"
+              value="1"
+              id="slider"
+            />
+          </div>
+
+          <div>
+            <input type="checkbox" id="check1" name="check1" />
+            <label for="check1">Include upper case letters</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check2" name="check2" />
+            <label for="check2">Include lower case letters</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check3" name="check3" />
+            <label for="check3">Include Numbers</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check4" name="check4" />
+            <label for="check4">Include Symbols</label>
+          </div>
+
+          <div class="strength">
+            <div>Strength</div>
+            <div class="indicator"></div>
+          </div>
+
+          <button onclick="generate()" class="generate">
+            Generate Password
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
