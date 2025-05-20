@@ -128,10 +128,11 @@ async function copyContent() {
 function shuffle(arr) {
   let len = arr.length;
   for (let i = 0; i < len; i++) {
-    // swap(arr[i],arr[randomInteger(0,len-1)]);
-    let temp = arr[i];
-    arr[i] = arr[randomInteger(0, len - 1)];
-    arr[randomInteger(0, len - 1)] = temp;
+    let tempIndex1 = randomInteger(0, len - 1);
+    let tempIndex2 = randomInteger(0, len - 1);
+    let temp = arr[tempIndex1];
+    arr[tempIndex1] = arr[tempIndex2];
+    arr[tempIndex2] = temp;
   }
   let str = "";
   arr.forEach((element) => (str += element));
@@ -147,21 +148,25 @@ function generate() {
 
   if (checkUpper) {
     funcArray.push(randomUpperCase);
+    result += randomUpperCase();
     count++;
   }
 
   if (checkLower) {
     funcArray.push(randomLowerCase);
+    result += randomLowerCase();
     count++;
   }
 
   if (checkNumber) {
     funcArray.push(randomNumber);
+    result += randomNumber();
     count++;
   }
 
   if (checkSymbol) {
     funcArray.push(randomSymbol);
+    result += randomSymbol();
     count++;
   }
 
@@ -170,15 +175,14 @@ function generate() {
     length.textContent = barValue.value;
   }
 
-  for (let i = 0; i < funcArray.length; i++) {
-    let func = funcArray[i];
-    result += func();
-  }
+  // for (let i = 0; i < funcArray.length; i++) {
+  //   let func = funcArray[i];
+  //   result += func();
+  // }
 
-  for (let i = 0; i < len - funcArray.length; i++) {
+  for (let i = 0; i < len - count; i++) {
     let randomIndex = randomInteger(0, funcArray.length - 1);
-    let func = funcArray[randomIndex];
-    result += func();
+    result += funcArray[randomIndex]();
   }
 
   result = shuffle(Array.from(result));
